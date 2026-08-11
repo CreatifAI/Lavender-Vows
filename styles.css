@@ -1,0 +1,1997 @@
+/* =========================================================
+   LAVENDER VOWS
+   Editorial Garden Wedding Invitation
+   ========================================================= */
+
+
+/* =========================================================
+   ROOT
+   ========================================================= */
+
+:root {
+  --lavender: #e9e0f3;
+  --lavender-deep: #d9c9e7;
+  --ivory: #fffdf7;
+  --paper: #fdf9f0;
+
+  --ink: #493b4d;
+  --ink-soft: #665567;
+  --mauve: #a77896;
+  --gold: #b69758;
+  --gold-soft: #d6c28e;
+
+  --line: rgba(73, 59, 77, 0.15);
+
+  --page-gutter: clamp(24px, 7vw, 110px);
+  --content-width: 1180px;
+}
+
+
+/* =========================================================
+   RESET
+   ========================================================= */
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--lavender);
+  color: var(--ink);
+  font-family: "DM Sans", sans-serif;
+  font-size: 15px;
+  line-height: 1.55;
+  overflow-x: hidden;
+}
+
+img {
+  max-width: 100%;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+
+/* =========================================================
+   GRAIN
+   ========================================================= */
+
+.grain {
+  position: fixed;
+  inset: 0;
+  z-index: 20;
+  opacity: 0.055;
+  pointer-events: none;
+
+  background-image:
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.7'/%3E%3C/svg%3E");
+}
+
+
+/* =========================================================
+   SHAGNA INVITES WATERMARK
+   ========================================================= */
+
+.site-watermark {
+  position: fixed;
+  right: 28px;
+  bottom: 22px;
+  z-index: 100;
+
+  font-family: "Italianno", cursive;
+  font-size: 24px;
+  letter-spacing: 0.02em;
+
+  color: rgba(90, 66, 89, 0.38);
+
+  pointer-events: none;
+  user-select: none;
+
+  transform: rotate(-4deg);
+}
+
+
+
+/* =========================================================
+   NAVIGATION
+   ========================================================= */
+
+.nav {
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 74px;
+
+  padding: 18px var(--page-gutter);
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  z-index: 10;
+}
+
+.monogram {
+  color: var(--ink);
+  text-decoration: none;
+
+  font-family: "Cormorant Garamond", serif;
+  font-size: 38px;
+  line-height: 1;
+
+  letter-spacing: -4px;
+}
+
+.monogram span {
+  color: var(--gold);
+  font-family: "DM Sans", sans-serif;
+  font-size: 16px;
+
+  vertical-align: middle;
+  margin: 0 3px;
+}
+
+.nav-rsvp {
+  color: var(--ink);
+  text-decoration: none;
+
+  font-size: 10px;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+
+  border-bottom: 1px solid var(--gold);
+  padding-bottom: 3px;
+}
+
+
+/* =========================================================
+   GENERAL TYPOGRAPHY
+   ========================================================= */
+
+.eyebrow {
+  margin: 0 0 13px;
+
+  color: var(--mauve);
+
+  font-size: 10px;
+  font-weight: 600;
+
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+}
+
+h2 {
+  margin: 0;
+
+  color: var(--ink);
+
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(42px, 5vw, 62px);
+  font-weight: 500;
+  line-height: 0.88;
+}
+
+h2 i {
+  font-family: "Italianno", cursive;
+  font-size: 1.35em;
+  font-style: normal;
+  font-weight: 400;
+}
+
+.section-pad {
+  padding: clamp(80px, 9vw, 125px) var(--page-gutter);
+}
+
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.hero {
+  position: relative;
+
+  min-height: 820px;
+
+  padding:
+    145px
+    var(--page-gutter)
+    50px;
+
+  overflow: hidden;
+
+  text-align: center;
+}
+
+.hero-title {
+  position: relative;
+  z-index: 2;
+
+  color: #5a425b;
+
+  font-family: "Italianno", cursive;
+  font-size: clamp(62px, 8vw, 98px);
+  line-height: 0.72;
+}
+
+.hero-title em {
+  margin: 0 8px;
+
+  color: var(--gold);
+
+  font-family: "Cormorant Garamond", serif;
+  font-size: 20px;
+  font-style: normal;
+
+  vertical-align: middle;
+}
+
+.hero-date {
+  margin: 23px 0 0;
+
+  color: var(--ink);
+
+  font-size: 11px;
+  letter-spacing: 0.21em;
+}
+
+
+/* =========================================================
+   HERO COLLAGE
+   ========================================================= */
+
+.collage {
+  position: relative;
+
+  width: min(500px, 92vw);
+  height: 465px;
+
+  margin: 45px auto 0;
+}
+
+.postcard,
+.photo-frame {
+  position: absolute;
+
+  background: var(--ivory);
+
+  box-shadow:
+    0 14px 30px rgba(76, 50, 75, 0.13),
+    0 3px 8px rgba(76, 50, 75, 0.08);
+}
+
+
+/* LEFT POSTCARD */
+
+.postcard {
+  top: 40px;
+  left: 2%;
+
+  width: 190px;
+
+  padding: 28px 21px;
+
+  text-align: left;
+
+  transform: rotate(-8deg);
+
+  z-index: 3;
+}
+
+.postcard .postmark {
+  display: inline-block;
+
+  padding: 3px 5px;
+
+  border: 1px solid var(--mauve);
+
+  color: var(--mauve);
+
+  font-size: 7px;
+  letter-spacing: 0.12em;
+}
+
+.postcard p {
+  margin: 26px 0 9px;
+
+  font-family: "Cormorant Garamond", serif;
+  font-size: 22px;
+  line-height: 1.05;
+}
+
+.postcard i {
+  font-family: "Italianno", cursive;
+  font-size: 1.45em;
+  font-style: normal;
+}
+
+.postcard small {
+  font-size: 8px;
+  letter-spacing: 0.08em;
+}
+
+
+/* HERO PHOTO */
+
+.photo-frame {
+  top: 65px;
+  right: 1%;
+
+  width: 245px;
+
+  padding: 11px 11px 26px;
+
+  transform: rotate(6deg);
+
+  z-index: 2;
+}
+
+.photo-frame img {
+  display: block;
+
+  width: 100%;
+  height: 285px;
+
+  object-fit: cover;
+
+  filter: saturate(0.76) sepia(0.08);
+}
+
+.photo-frame span {
+  display: block;
+
+  padding-top: 8px;
+
+  color: var(--mauve);
+
+  font-family: "Cormorant Garamond", serif;
+  font-size: 11px;
+}
+
+
+/* RECORD */
+
+.record {
+  position: absolute;
+
+  top: 290px;
+  left: 18px;
+
+  width: 135px;
+  height: 135px;
+
+  border-radius: 50%;
+
+  background:
+    repeating-radial-gradient(
+      #252028 0 2px,
+      #18151a 3px 5px
+    );
+
+  box-shadow:
+    7px 10px 12px rgba(76, 50, 75, 0.25);
+
+  animation: spin 18s linear infinite;
+
+  z-index: 4;
+}
+
+.record-label {
+  position: absolute;
+
+  top: 44px;
+  left: 44px;
+
+  width: 47px;
+  height: 47px;
+
+  padding-top: 9px;
+
+  border: 4px solid #dccee0;
+  border-radius: 50%;
+
+  background: #b18ba5;
+
+  color: var(--ivory);
+
+  font-family: "Cormorant Garamond", serif;
+  font-size: 18px;
+  line-height: 11px;
+
+  text-align: center;
+}
+
+.record-label small {
+  font-size: 10px;
+}
+
+
+/* FLOWERS */
+
+.flower {
+  position: absolute;
+
+  color: var(--gold);
+
+  font-size: 72px;
+  line-height: 1;
+}
+
+.flower-a {
+  top: 285px;
+  right: -8px;
+
+  transform: rotate(-20deg);
+}
+
+.flower-b {
+  top: 340px;
+  left: 155px;
+
+  color: #b789a5;
+
+  font-size: 48px;
+}
+
+
+/* PEARLS */
+
+.pearls {
+  position: absolute;
+
+  top: 10px;
+  right: 20px;
+
+  color: var(--ivory);
+
+  font-size: 18px;
+  letter-spacing: -2px;
+
+  text-shadow: 1px 1px 2px #a791a0;
+
+  transform: rotate(25deg);
+}
+
+
+/* HERO SCROLL */
+
+.scroll-cue {
+  color: var(--ink);
+
+  font-family: "Cormorant Garamond", serif;
+  font-size: 11px;
+
+  letter-spacing: 0.1em;
+  text-decoration: none;
+}
+
+.scroll-cue span {
+  margin-left: 5px;
+
+  color: var(--gold);
+
+  font-size: 18px;
+}
+
+
+/* =========================================================
+   ANIMATION BASE
+   ========================================================= */
+
+.animate {
+  opacity: 0;
+
+  animation:
+    heroPop 0.7s cubic-bezier(.18,.89,.32,1.28)
+    forwards;
+
+  animation-delay:
+    calc(var(--i) * .13s + .1s);
+}
+
+@keyframes heroPop {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+
+/* =========================================================
+   SCROLL REVEAL
+   ========================================================= */
+
+.reveal {
+  opacity: 0;
+
+  transform: translateY(28px);
+
+  transition:
+    opacity .8s ease,
+    transform .8s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+
+  transform: translateY(0);
+}
+
+
+/* =========================================================
+   COUNTDOWN
+   ========================================================= */
+
+.countdown {
+  background: var(--ivory);
+
+  text-align: center;
+}
+
+.timer {
+  display: flex;
+
+  align-items: flex-start;
+  justify-content: center;
+
+  gap: clamp(8px, 2vw, 18px);
+}
+
+.timer div {
+  min-width: clamp(60px, 8vw, 100px);
+}
+
+.timer b {
+  display: block;
+
+  color: var(--ink);
+
+  font-family: "Cormorant Garamond", serif;
+  font-size: clamp(42px, 5vw, 62px);
+  font-weight: 400;
+  line-height: 1;
+}
+
+.timer span {
+  color: var(--mauve);
+
+  font-size: 9px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+
+.timer i {
+  color: var(--gold);
+
+  font-family: "Cormorant Garamond", serif;
+  font-size: 25px;
+
+  font-style: normal;
+}
+
+
+/* =========================================================
+   LOVE STORY
+   ========================================================= */
+
+.story {
+  display: grid;
+
+  gap: 55px;
+
+  background:
+    linear-gradient(
+      115deg,
+      transparent 68%,
+      rgba(255, 253, 247, .42) 68%
+    );
+}
+
+.section-heading {
+  align-self: center;
+}
+
+.story-copy {
+  width: min(440px, 100%);
+  justify-self: end;
+
+  color: var(--ink-soft);
+
+  font-size: 14px;
+}
+
+.story-copy p {
+  margin: 0 0 18px;
+}
+
+.flourish {
+  display: block;
+
+  color: var(--gold);
+
+  font-size: 30px;
+}
+
+
+/* =========================================================
+   INTERACTIVE INVITATION
+   ========================================================= */
+
+.invitation-wrap {
+  padding-top: clamp(80px, 9vw, 120px);
+  padding-bottom: clamp(100px, 11vw, 150px);
+
+  overflow: hidden;
+}
+
+.envelope-experience {
+  width: min(900px, 100%);
+
+  margin: 0 auto;
+
+  text-align: center;
+}
+
+
+/* CLOSED ENVELOPE STAGE */
+
+.envelope-stage {
+  position: relative;
+
+  width: min(760px, 100%);
+
+  margin: 0 auto;
+
+  transition:
+    opacity .8s ease,
+    transform .8s ease;
+}
+
+
+/*
+  The generated envelope image contains the
+  lavender surface + envelope composition.
+*/
+
+.envelope-visual {
+  position: relative;
+
+  width: 100%;
+
+  margin: 22px auto 0;
+}
+
+.envelope-image {
+  display: block;
+
+  width: 100%;
+  height: auto;
+
+  box-shadow:
+    0 24px 55px rgba(70, 45, 70, .16),
+    0 8px 18px rgba(70, 45, 70, .08);
+}
+
+
+/*
+  Invisible button positioned over the
+  wax seal in the generated envelope image.
+*/
+
+.seal-trigger {
+  position: absolute;
+
+  top: 68%;
+  left: 50%;
+
+  width: clamp(85px, 12vw, 125px);
+  height: clamp(85px, 12vw, 125px);
+
+  padding: 0;
+
+  border: 0;
+  border-radius: 50%;
+
+  background: transparent;
+
+  cursor: pointer;
+
+  transform: translate(-50%, -50%);
+
+  z-index: 5;
+}
+
+.seal-trigger::before {
+  content: "";
+
+  position: absolute;
+  inset: 5px;
+
+  border-radius: 50%;
+
+  background: rgba(255,255,255,0);
+
+  transition:
+    transform .35s ease,
+    background .35s ease;
+}
+
+.seal-trigger:hover::before {
+  background: rgba(255,255,255,.08);
+
+  transform: scale(1.08);
+}
+
+.seal-trigger:active::before {
+  transform: scale(.92);
+}
+
+.envelope-hint {
+  margin: 16px 0 0;
+
+  color: var(--ink-soft);
+
+  font-size: 10px;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+}
+
+.envelope-hint::after {
+  content: " ↓";
+
+  color: var(--gold);
+}
+
+
+/* ENVELOPE DISAPPEARS */
+
+.envelope-stage.opening {
+  transform: translateY(-10px);
+}
+
+.envelope-stage.opened {
+  opacity: 0;
+
+  transform:
+    translateY(-55px)
+    scale(.97);
+
+  pointer-events: none;
+}
+
+
+/* =========================================================
+   INVITATION PAPER
+   ========================================================= */
+
+.invitation-scroll {
+  position: relative;
+
+  width: min(760px, 100%);
+
+  margin: -80px auto 0;
+
+  opacity: 0;
+
+  transform: translateY(220px);
+
+  pointer-events: none;
+
+  transition:
+    opacity 1s ease .25s,
+    transform 1.35s cubic-bezier(.22,1,.36,1) .25s;
+
+  z-index: 4;
+}
+
+.invitation-scroll.open {
+  opacity: 1;
+
+  transform: translateY(0);
+
+  pointer-events: auto;
+}
+
+
+.invitation-paper {
+  position: relative;
+
+  width: 100%;
+
+  overflow: hidden;
+
+  box-shadow:
+    0 28px 65px rgba(70,45,70,.17),
+    0 8px 18px rgba(70,45,70,.08);
+}
+
+.invitation-paper-image {
+  display: block;
+
+  width: 100%;
+  height: auto;
+}
+
+
+/*
+  Text sits over the blank paper area
+  of invitation-paper.png.
+*/
+
+.invitation-content {
+  position: absolute;
+
+  top: 23%;
+  left: 23%;
+
+  width: 54%;
+  height: 61%;
+
+  z-index: 3;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  overflow-y: auto;
+
+  padding:
+    10px
+    12px
+    24px;
+
+  text-align: center;
+
+  scrollbar-width: thin;
+  scrollbar-color:
+    rgba(169,138,67,.35)
+    transparent;
+}
+
+
+/* INVITATION TYPOGRAPHY */
+
+.invitation-content h2 {
+  margin-top: 10px;
+
+  color: #4d394d;
+
+  font-size: clamp(34px, 5vw, 54px);
+}
+
+.invitation-divider {
+  margin: 16px 0;
+
+  color: var(--gold);
+
+  font-size: 22px;
+}
+
+.invitation-intro {
+  width: min(390px, 100%);
+
+  margin: 0 auto;
+
+  color: var(--ink-soft);
+
+  font-family: "Cormorant Garamond", serif;
+  font-size: 15px;
+  line-height: 1.55;
+}
+
+.invitation-names {
+  margin-top: 23px;
+
+  color: #5a4359;
+
+  font-family: "Italianno", cursive;
+  font-size: clamp(40px, 6vw, 58px);
+  line-height: .9;
+}
+
+.invitation-names span {
+  margin: 0 8px;
+
+  color: var(--gold);
+
+  font-family: "Cormorant Garamond", serif;
+  font-size: .5em;
+}
+
+.invitation-date {
+  margin-top: 12px;
+
+  color: #776271;
+
+  font-size: 10px;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+}
+
+
+/* EVENTS */
+
+.invitation-event {
+  width: 100%;
+
+  margin-top: 27px;
+
+  padding:
+    20px 0;
+
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.event-block {
+  margin: 10px 0;
+}
+
+.event-label {
+  margin: 0 0 5px;
+
+  color: var(--mauve);
+
+  font-size: 9px;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+}
+
+.event-time {
+  margin: 0;
+
+  color: var(--ink);
+
+  font-family: "Cormorant Garamond", serif;
+  font-size: 25px;
+}
+
+.event-place {
+  margin: 2px 0;
+
+  color: var(--ink-soft);
+
+  font-size: 10px;
+}
+
+.event-divider {
+  margin: 10px 0;
+
+  color: var(--gold);
+}
+
+
+/* INVITATION MESSAGE */
+
+.invitation-message {
+  width: min(390px, 100%);
+
+  margin-top: 23px;
+
+  color: var(--ink-soft);
+
+  font-family: "Cormorant Garamond", serif;
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+.invitation-message p {
+  margin: 0 0 12px;
+}
+
+
+/* DETAILS */
+
+.invitation-details {
+  width: 100%;
+
+  margin-top: 22px;
+
+  padding-top: 20px;
+
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  gap: 18px;
+
+  border-top: 1px solid var(--line);
+}
+
+.invitation-details b {
+  color: var(--ink);
+
+  font-family: "Cormorant Garamond", serif;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.invitation-details p {
+  margin: 5px 0 0;
+
+  color: var(--ink-soft);
+
+  font-size: 10px;
+  line-height: 1.5;
+}
+
+
+/* MAP */
+
+.invitation-content .map {
+  display: inline-flex;
+
+  flex-direction: column;
+  align-items: center;
+
+  gap: 4px;
+
+  margin-top: 22px;
+
+  color: var(--ink);
+
+  font-family: "Cormorant Garamond", serif;
+  font-size: 14px;
+
+  text-decoration: none;
+}
+
+.invitation-content .map span {
+  color: var(--gold);
+}
+
+.invitation-content .map small {
+  color: var(--mauve);
+
+  font-family: "DM Sans", sans-serif;
+  font-size: 8px;
+}
+
+
+/* CLOSING */
+
+.invitation-closing {
+  margin-top: 28px;
+
+  padding-bottom: 12px;
+}
+
+.invitation-closing span {
+  display: block;
+
+  color: #806d7e;
+
+  font-family: "Cormorant Garamond", serif;
+  font-size: 14px;
+  font-style: italic;
+}
+
+.invitation-closing strong {
+  display: block;
+
+  margin-top: 4px;
+
+  color: #5a4359;
+
+  font-family: "Italianno", cursive;
+  font-size: 40px;
+  font-weight: 400;
+}
+
+
+/* =========================================================
+   DRESS CODE
+   ========================================================= */
+
+.dress-code {
+  text-align: center;
+}
+
+.dress-icon {
+  margin-bottom: 18px;
+
+  color: var(--gold);
+
+  font-size: 50px;
+  line-height: .8;
+}
+
+.dress-code > p:not(.eyebrow) {
+  width: min(410px, 100%);
+
+  margin:
+    25px
+    auto;
+
+  color: var(--ink-soft);
+}
+
+.palette {
+  display: flex;
+
+  justify-content: center;
+
+  gap: 7px;
+}
+
+.palette span {
+  width: 24px;
+  height: 24px;
+
+  border: 2px solid var(--ivory);
+  border-radius: 50%;
+
+  box-shadow:
+    0 0 0 1px var(--line);
+}
+
+.palette span:nth-child(1) {
+  background: #7b6076;
+}
+
+.palette span:nth-child(2) {
+  background: #b586a4;
+}
+
+.palette span:nth-child(3) {
+  background: #ddd7a0;
+}
+
+.palette span:nth-child(4) {
+  background: #f6ecdf;
+}
+
+.palette span:nth-child(5) {
+  background: #839070;
+}
+
+
+/* =========================================================
+   RSVP
+   ========================================================= */
+
+.rsvp {
+  background: #dbcee9;
+}
+
+.rsvp form {
+  width: min(500px, 100%);
+
+  margin-top: 40px;
+
+  display: grid;
+
+  gap: 19px;
+}
+
+label,
+legend {
+  color: var(--ink);
+
+  font-size: 10px;
+  font-weight: 500;
+
+  letter-spacing: .07em;
+  text-transform: uppercase;
+}
+
+label > span {
+  color: var(--mauve);
+
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+input,
+select,
+textarea {
+  display: block;
+
+  width: 100%;
+
+  margin-top: 7px;
+
+  padding:
+    9px
+    0;
+
+  border: 0;
+  border-bottom: 1px solid var(--mauve);
+
+  border-radius: 0;
+
+  background: transparent;
+
+  color: var(--ink);
+
+  font-family: "Cormorant Garamond", serif;
+  font-size: 16px;
+
+  outline: none;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: var(--gold);
+}
+
+fieldset {
+  margin: 0;
+  padding: 0;
+
+  border: 0;
+}
+
+.choice-row {
+  display: grid;
+
+  gap: 10px;
+
+  margin-top: 10px;
+}
+
+.choice-row label {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 14px;
+
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+.choice-row input {
+  display: inline;
+
+  width: auto;
+
+  margin:
+    0
+    6px
+    0
+    0;
+
+  accent-color: var(--mauve);
+}
+
+.submit {
+  justify-self: start;
+
+  margin-top: 6px;
+
+  padding:
+    8px
+    0;
+
+  border: 0;
+  border-bottom: 1px solid var(--gold);
+
+  background: transparent;
+
+  color: var(--ink);
+
+  font-size: 10px;
+  font-weight: 600;
+
+  letter-spacing: .14em;
+  text-transform: uppercase;
+
+  cursor: pointer;
+}
+
+.submit span {
+  margin-left: 6px;
+
+  color: var(--gold);
+
+  font-size: 17px;
+}
+
+.form-note {
+  margin: 0;
+
+  color: var(--mauve);
+
+  font-family: "Cormorant Garamond", serif;
+  font-size: 12px;
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.closing {
+  padding:
+    70px
+    var(--page-gutter)
+    35px;
+
+  background: #6b526b;
+
+  color: #fff8f2;
+
+  text-align: center;
+}
+
+.closing p {
+  margin: 0;
+
+  font-family: "Cormorant Garamond", serif;
+  font-size: 18px;
+}
+
+.closing div {
+  margin: 17px 0;
+
+  font-family: "Italianno", cursive;
+  font-size: clamp(52px, 7vw, 70px);
+  line-height: .75;
+}
+
+.closing div span {
+  color: #dfc382;
+
+  font-family: "Cormorant Garamond", serif;
+  font-size: 17px;
+}
+
+.closing small {
+  font-size: 9px;
+  letter-spacing: .13em;
+}
+
+.music-toggle {
+  display: block;
+
+  margin:
+    30px
+    auto
+    0;
+
+  padding:
+    7px
+    12px;
+
+  border: 1px solid rgba(255,255,255,.45);
+
+  background: transparent;
+
+  color: white;
+
+  font-size: 10px;
+  letter-spacing: .1em;
+
+  cursor: pointer;
+}
+
+
+/* =========================================================
+   DESKTOP
+   ========================================================= */
+
+@media (min-width: 720px) {
+
+  .story {
+    grid-template-columns: 1fr 1fr;
+
+    align-items: center;
+
+    min-height: 620px;
+  }
+
+
+  .rsvp {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 80px;
+
+    align-items: start;
+  }
+
+  .rsvp form {
+    margin-top: 0;
+  }
+
+
+  .invitation-wrap {
+    min-height: 900px;
+
+    display: flex;
+    align-items: center;
+  }
+
+
+  .invitation-content {
+    top: 22%;
+    left: 22%;
+
+    width: 56%;
+    height: 63%;
+  }
+
+}
+
+
+/* =========================================================
+   TABLET / SMALL LAPTOP
+   ========================================================= */
+
+@media (max-width: 900px) {
+
+  .hero {
+    min-height: 760px;
+  }
+
+  .collage {
+    transform: scale(.92);
+    transform-origin: top center;
+  }
+
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 719px) {
+
+  .site-watermark {
+  right: 14px;
+  bottom: 14px;
+  font-size: 20px;
+  color: rgba(90, 66, 89, 0.34);
+}
+  }
+
+
+  .nav {
+    padding:
+      17px
+      24px;
+  }
+
+  .monogram {
+    font-size: 32px;
+  }
+
+
+  .hero {
+    min-height: 700px;
+
+    padding:
+      112px
+      20px
+      35px;
+  }
+
+  .hero-title {
+    font-size: 66px;
+  }
+
+  .collage {
+    width: min(430px, 100%);
+
+    height: 390px;
+
+    margin-top: 30px;
+
+    transform: scale(.78);
+    transform-origin: top center;
+  }
+
+
+  .postcard {
+    left: 1%;
+  }
+
+  .photo-frame {
+    right: 0;
+  }
+
+
+  .story {
+    gap: 45px;
+
+    background:
+      linear-gradient(
+        115deg,
+        transparent 65%,
+        rgba(255,253,247,.4) 65%
+      );
+  }
+
+  .story-copy {
+    justify-self: start;
+
+    font-size: 13px;
+  }
+
+
+  /* ENVELOPE */
+
+  .invitation-wrap {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  .envelope-experience {
+    width: 100%;
+  }
+
+  .envelope-stage {
+    width: 100%;
+  }
+
+  .envelope-hint {
+    font-size: 9px;
+  }
+
+
+  /* PAPER */
+
+  .invitation-scroll {
+    width: 100%;
+
+    margin-top: -55px;
+  }
+
+  .invitation-content {
+    top: 20%;
+    left: 19%;
+
+    width: 62%;
+    height: 63%;
+
+    padding:
+      8px
+      5px
+      15px;
+  }
+
+  .invitation-content .eyebrow {
+    font-size: 7px;
+    margin-bottom: 5px;
+  }
+
+  .invitation-content h2 {
+    font-size: 31px;
+  }
+
+  .invitation-divider {
+    margin: 10px 0;
+
+    font-size: 17px;
+  }
+
+  .invitation-intro {
+    font-size: 11px;
+  }
+
+  .invitation-names {
+    margin-top: 16px;
+
+    font-size: 38px;
+  }
+
+  .invitation-date {
+    font-size: 8px;
+  }
+
+  .invitation-event {
+    margin-top: 17px;
+
+    padding:
+      12px
+      0;
+  }
+
+  .event-label {
+    font-size: 7px;
+  }
+
+  .event-time {
+    font-size: 20px;
+  }
+
+  .event-place {
+    font-size: 8px;
+  }
+
+  .invitation-message {
+    margin-top: 16px;
+
+    font-size: 10px;
+  }
+
+  .invitation-details {
+    grid-template-columns: 1fr;
+
+    gap: 10px;
+
+    margin-top: 15px;
+    padding-top: 13px;
+  }
+
+  .invitation-details b {
+    font-size: 15px;
+  }
+
+  .invitation-details p {
+    font-size: 8px;
+  }
+
+  .invitation-content .map {
+    margin-top: 15px;
+
+    font-size: 11px;
+  }
+
+  .invitation-closing {
+    margin-top: 17px;
+  }
+
+  .invitation-closing span {
+    font-size: 10px;
+  }
+
+  .invitation-closing strong {
+    font-size: 31px;
+  }
+
+
+  .rsvp form {
+    width: 100%;
+  }
+
+
+  .closing div {
+    font-size: 54px;
+  }
+
+}
+
+
+/* =========================================================
+   REDUCED MOTION
+   ========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  html {
+    scroll-behavior: auto !important;
+
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+
+    transition-duration: .01ms !important;
+  }
+
+}/* Shagna Invites signature */
+
+/* =========================================
+   SHAGNA INVITES — DESIGNER SIGNATURE
+   ========================================= */
+.site-watermark {
+  position: fixed !important;
+  left: 24px !important;
+  bottom: 18px !important;
+
+  z-index: 9999 !important;
+
+  display: block !important;
+
+  font-family: "Italianno", cursive !important;
+  font-size: 22px !important;
+  line-height: 1 !important;
+  letter-spacing: 0.02em !important;
+
+  color: rgba(255, 248, 252, 0.55) !important;
+
+  text-shadow:
+    0 1px 2px rgba(70, 45, 70, 0.20) !important;
+
+  pointer-events: none !important;
+  user-select: none !important;
+
+  transform: rotate(-4deg) !important;
+}
+
+@media (max-width: 719px) {
+  .site-watermark {
+    left: 14px !important;
+    bottom: 12px !important;
+    font-size: 19px !important;
+  }
+}/* Shagna Invites footer signature */
+
+.closing {
+  position: relative;
+}
+
+.footer-watermark {
+  margin-top: 28px;
+
+  font-family: "Italianno", cursive;
+  font-size: 22px;
+  line-height: 1;
+
+  color: rgba(255, 248, 252, 0.58);
+
+  letter-spacing: 0.02em;
+
+  transform: rotate(-4deg);
+}
+
+@media (max-width: 719px) {
+  .footer-watermark {
+    margin-top: 24px;
+    font-size: 19px;
+  }
+}/* Temporary invitation sizing */
+
+.invitation-scroll {
+  width: min(560px, 82vw);
+}
+
+@media (max-width: 719px) {
+  .invitation-scroll {
+    width: 88vw;
+  }
+}/* =========================================
+   STORY IMAGE
+   ========================================= */
+
+.story-image {
+  grid-column: 1 / -1;
+
+  width: min(760px, 100%);
+
+  margin: 25px auto 0;
+
+  overflow: hidden;
+
+  box-shadow:
+    0 18px 40px rgba(70, 45, 70, 0.12);
+}
+
+.story-image img {
+  display: block;
+
+  width: 100%;
+  height: auto;
+
+  object-fit: cover;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 719px) {
+
+  .story-image {
+    width: 100%;
+
+    margin-top: 15px;
+  }
+
+}/* =========================================
+   STORY IMAGE 2
+   ========================================= */
+
+.story-image-2 {
+  width: min(620px, 88%);
+  margin-top: 55px;
+}
+
+.story-image-2 img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+@media (max-width: 719px) {
+  .story-image-2 {
+    width: 100%;
+    margin-top: 30px;
+  }
+}/* =========================================
+   VENUE
+   ========================================= */
+
+.venue-section {
+  text-align: center;
+}
+
+.venue-heading {
+  width: min(500px, 100%);
+  margin: 0 auto 45px;
+}
+
+.venue-heading h2 {
+  margin-top: 8px;
+}
+
+.venue-heading > p:last-child {
+  margin: 28px auto 0;
+
+  width: min(430px, 100%);
+
+  color: var(--ink-soft);
+
+  font-family: "Cormorant Garamond", serif;
+  font-size: 15px;
+  line-height: 1.55;
+}
+
+.venue-image {
+  width: min(900px, 100%);
+  margin: 0 auto;
+
+  overflow: hidden;
+
+  box-shadow:
+    0 22px 50px rgba(70, 45, 70, 0.14);
+}
+
+.venue-image img {
+  display: block;
+
+  width: 100%;
+  height: auto;
+
+  object-fit: cover;
+}
+
+.venue-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+
+  margin-top: 24px;
+
+  color: var(--ink);
+
+  font-size: 10px;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  text-decoration: none;
+
+  border-bottom: 1px solid var(--gold);
+
+  padding-bottom: 5px;
+}
+
+.venue-link span {
+  color: var(--gold);
+  font-size: 15px;
+}
+
+
+@media (max-width: 719px) {
+
+  .venue-heading {
+    margin-bottom: 30px;
+  }
+
+  .venue-heading > p:last-child {
+    font-size: 13px;
+  }
+
+  .venue-image {
+    width: 100%;
+  }
+/* =========================================
+   DRESS CODE — SPACING FIX
+   ========================================= */
+
+.dress-code {
+  padding-left: var(--page-gutter);
+  padding-right: var(--page-gutter);
+
+  text-align: center;
+}
+
+.dress-code > * {
+  max-width: 650px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.dress-code .eyebrow {
+  margin-bottom: 14px;
+}
+
+.dress-code h2 {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.dress-code > p:not(.eyebrow) {
+  max-width: 520px;
+  margin: 28px auto 24px;
+  line-height: 1.55;
+}
+
+.palette {
+  margin-top: 12px;
+}
+
+
+/* =========================================
+   VENUE — CLEAN SPACING
+   ========================================= */
+
+.venue-section {
+  padding-top: 100px;
+  padding-bottom: 100px;
+
+  text-align: center;
+}
+
+.venue-heading {
+  margin-bottom: 42px;
+}
+
+.venue-image {
+  width: min(900px, calc(100vw - 2 * var(--page-gutter)));
+}
+
+.venue-link {
+  margin-top: 28px;
+}
+}/* =========================================
+   DRESS CODE — SPACING FIX
+   ========================================= */
+
+.dress-code {
+  padding-left: var(--page-gutter);
+  padding-right: var(--page-gutter);
+
+  text-align: center;
+}
+
+.dress-code > * {
+  max-width: 650px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.dress-code .eyebrow {
+  margin-bottom: 14px;
+}
+
+.dress-code h2 {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.dress-code > p:not(.eyebrow) {
+  max-width: 520px;
+
+  margin:
+    28px auto 24px;
+
+  line-height: 1.55;
+}
+
+.palette {
+  margin-top: 12px;
+}

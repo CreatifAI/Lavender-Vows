@@ -1,0 +1,19 @@
+# Olivia & Daniel wedding website
+
+## Run locally
+
+This is a dependency-free static site. Open `index.html` in a browser, or from this folder run `python -m http.server 8000` and visit `http://localhost:8000`.
+
+## Customize
+
+- Change the names, date, location, ceremony/reception details, and RSVP deadline in `index.html`.
+- Replace `assets/olivia-daniel-placeholder.png` with your own image, keeping the filename or updating its `img` source in `index.html`.
+- Update the `weddingDate` value in `script.js` (local time) to keep the countdown accurate.
+- Connect the RSVP form to Formspree, Netlify Forms, or your own backend before publishing. It currently shows a friendly client-side confirmation only.
+- The Music toggle is intentionally visual and muted by default. Add an audio file and playback logic only if you want music on the site.
+
+## Deploy
+
+Upload these files to any static host. For GitHub Pages: push the folder to a repository, then enable **Settings → Pages → Deploy from a branch**. For Netlify or Vercel: drag this folder into their dashboard or import its repository; no build command is needed.
+
+
