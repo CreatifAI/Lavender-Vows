@@ -1995,3 +1995,70 @@ fieldset {
 .palette {
   margin-top: 12px;
 }
+/* Make the wax seal clickable */
+.envelope-visual {
+  position: relative;
+}
+
+.seal-trigger {
+  position: absolute;
+  width: 70px;
+  height: 70px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
+  background: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+}/* =========================================
+   WAX SEAL / ENVELOPE INTERACTION
+   ========================================= */
+
+.envelope-visual {
+  position: relative;
+}
+
+.seal-trigger {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 100px;
+  height: 100px;
+  transform: translate(-50%, -50%);
+  z-index: 100;
+  display: block;
+  background: transparent;
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+}
+
+.seal-trigger:focus {
+  outline: none;
+}
+
+.envelope-stage {
+  transition: opacity 0.6s ease,
+              transform 0.6s ease;
+}
+
+.envelope-stage.opening {
+  transform: translateY(-20px);
+}
+
+.envelope-stage.opened {
+  opacity: 0;
+  pointer-events: none;
+}
+
+#invitation-scroll {
+  transition: transform 0.8s ease,
+              opacity 0.8s ease;
+}
+
+#invitation-scroll.open {
+  opacity: 1;
+  transform: translateY(0);
+}

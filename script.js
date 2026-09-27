@@ -2,7 +2,6 @@
    LAVENDER VOWS
    ========================================= */
 
-
 /* COUNTDOWN */
 
 const weddingDate = new Date("2027-10-18T16:00:00");
@@ -72,59 +71,49 @@ if ("IntersectionObserver" in window) {
 }
 
 
-/* =========================================
+/*/* =========================================
    ENVELOPE
    ========================================= */
 
-const sealTrigger =
-  document.querySelector("#seal-trigger");
+document.addEventListener("DOMContentLoaded", () => {
 
-const envelopeStage =
-  document.querySelector("#envelope-stage");
+  const sealTrigger =
+    document.getElementById("seal-trigger");
 
-const invitationScroll =
-  document.querySelector("#invitation-scroll");
+  const envelopeStage =
+    document.getElementById("envelope-stage");
 
-const weddingAudio =
-  document.querySelector("#wedding-audio");
+  const invitationScroll =
+    document.getElementById("invitation-scroll");
 
-
-if (
-  sealTrigger &&
-  envelopeStage &&
-  invitationScroll
-) {
-
-  sealTrigger.addEventListener("click", function () {
-
-    console.log("Wax seal clicked");
-
-    /* Start music from the user's click */
-
-    if (weddingAudio) {
-      weddingAudio.play().catch((error) => {
-        console.log("Audio playback blocked:", error);
-      });
-    }
+  const weddingAudio =
+    document.getElementById("wedding-audio");
 
 
-    /* Prevent double clicks */
+  if (!sealTrigger || !envelopeStage || !invitationScroll) {
+    return;
+  }
 
-    if (
-      envelopeStage.classList.contains("opening") ||
-      envelopeStage.classList.contains("opened")
-    ) {
+
+  sealTrigger.addEventListener("click", () => {
+
+    /* Prevent repeated clicks */
+    if (envelopeStage.classList.contains("opened")) {
       return;
     }
 
 
-    /* Begin opening */
+    /* Start music */
+    if (weddingAudio) {
+      weddingAudio.play().catch(() => {});
+    }
 
+
+    /* Start envelope opening */
     envelopeStage.classList.add("opening");
 
 
-    /* Envelope moves away */
-
+    /* Mark envelope fully open */
     setTimeout(() => {
 
       envelopeStage.classList.add("opened");
@@ -132,8 +121,7 @@ if (
     }, 100);
 
 
-    /* Invitation rises */
-
+    /* Reveal invitation */
     setTimeout(() => {
 
       invitationScroll.classList.add("open");
@@ -146,8 +134,7 @@ if (
     }, 500);
 
 
-    /* Move naturally toward invitation */
-
+    /* Scroll naturally to invitation */
     setTimeout(() => {
 
       invitationScroll.scrollIntoView({
@@ -159,9 +146,7 @@ if (
 
   });
 
-}
-
-
+});
 /* =========================================
    RSVP
    ========================================= */
